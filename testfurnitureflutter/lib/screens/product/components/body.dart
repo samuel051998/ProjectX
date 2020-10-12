@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testfurnitureflutter/modals/product.dart';
+import 'package:testfurnitureflutter/screens/details/details_screen.dart';
 import '../../../components/search_box.dart';
 import '../../../constants.dart';
 import 'category_list.dart';
@@ -33,7 +34,14 @@ class Body extends StatelessWidget {
                   itemBuilder: (context, index) => ProductCard(
                     itemIndex: index,
                     product: products[index],
-                    press: () {},
+                    press: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DetailsScreen(),
+                        ),
+                      );
+                    },
                   ),
                 )
               ],
