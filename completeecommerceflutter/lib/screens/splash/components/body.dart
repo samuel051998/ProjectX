@@ -1,5 +1,6 @@
 import 'package:completeecommerceflutter/components/default_button.dart';
 import 'package:completeecommerceflutter/constants.dart';
+import 'package:completeecommerceflutter/screens/sign_in/sign_in_screen.dart';
 import 'package:completeecommerceflutter/size_config.dart';
 import 'package:flutter/material.dart';
 
@@ -53,7 +54,9 @@ class _BodyState extends State<Body> {
             Expanded(
               flex: 2,
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
+                padding: EdgeInsets.symmetric(
+                  horizontal: getProportionateScreenWidth(20)
+                ),
                 child: Column(
                   children: <Widget>[
                     Spacer(),
@@ -67,7 +70,9 @@ class _BodyState extends State<Body> {
                     Spacer(flex: 3),
                     DefaultButton(
                       text: "Continue",
-                      press: () {},
+                      press: () {
+                        Navigator.pushNamed(context, SignInScreen.routeName);
+                      },
                     ),
                     Spacer(),
                   ],
