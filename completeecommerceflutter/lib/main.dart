@@ -1,7 +1,6 @@
 import 'package:completeecommerceflutter/routes.dart';
 import 'package:completeecommerceflutter/theme.dart';
 import 'package:flutter/material.dart';
-import 'constants.dart';
 import 'screens/splash/splash_screen.dart';
 
 void main() {

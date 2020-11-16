@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:testfurnitureflutter/constants.dart';
-import 'color_dots.dart';
 import 'list_of_colors.dart';
 import 'product_image.dart';
 
