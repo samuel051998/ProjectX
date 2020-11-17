@@ -2,6 +2,8 @@ import 'package:dailyrecipesflutter/constants.dart';
 import 'package:dailyrecipesflutter/screens/login/components/imageFullScreenWidget.dart';
 import 'package:flutter/material.dart';
 
+import 'loginButtonEmail.dart';
+
 class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,7 @@ class Body extends StatelessWidget {
                     )
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 32.0),
+                    padding: const EdgeInsets.only(top: 16.0, bottom: 32),
                     child: Text(
                       'Cook new dishes, share then with friends, make your loved ones happy!',
                       style: TextStyle(
@@ -35,59 +37,20 @@ class Body extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Container(
-                    child: Center(
-                      child: FlatButton(
-                        minWidth: 375.0,
-                        height: 50.0,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50.0),
-                        ),
-                        color: kPrimaryColor,
-                        onPressed: () {},
-                        child: Row(
-                          children: <Widget>[
-                            IconButton(
-                              icon: Icon(Icons.mail),
-                              color: Colors.white,
-                              padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                              alignment: Alignment.center,
-                              onPressed: () {},
-                            ),
-                            Text(
-                              'Sign up by Email',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                              ),
-                            )
-                          ],
-                        ),
-                        
-                        /*child: RichText(
-                          text: TextSpan(
-                            children: [                  
-                              WidgetSpan(
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                                  child: Icon(
-                                    Icons.mail,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                              TextSpan(
-                                text: 'Sign up with Email',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.normal
-                                ),
-                              ),
-                            ],
-                          ),
-                        ), */
-                      ),
+                  LoginButtonEmail(),
+                  Padding(
+                    padding: EdgeInsets.only(top: 16.0, bottom: 32.0),
+                    child: LoginButtonEmail(),
+                  ),
+                  RichText(
+                    text: TextSpan(
+                      text: 'Already have account? ',
+                      style: DefaultTextStyle.of(context).style,
+                      children: <Button>[
+                        Link(
+                          text: 'Log In',
+                        )
+                      ]
                     ),
                   ),
                 ],
