@@ -1,6 +1,6 @@
 import 'package:dailyrecipesflutter/routes.dart';
-import 'package:dailyrecipesflutter/screens/login/login_screen.dart';
 import 'package:flutter/material.dart';
+import 'screens/home/home_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Daily Recipes App',
       //theme: theme(),
       //home: MyHomePage(title: 'Flutter Demo Home Page'),
-      initialRoute: LoginScreen.routeName,
+      initialRoute: HomeScreen.routeName,
       routes: routes,
     );
   }

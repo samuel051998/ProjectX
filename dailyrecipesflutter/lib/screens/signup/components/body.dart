@@ -1,8 +1,6 @@
-import 'package:dailyrecipesflutter/constants.dart';
-import 'package:dailyrecipesflutter/screens/login/components/imageFullScreenWidget.dart';
 import 'package:flutter/material.dart';
-
-import 'loginButtonEmail.dart';
+import 'imageFullScreenWidget.dart';
+import 'signUpButtonEmail.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -44,13 +42,11 @@ class Body extends StatelessWidget {
                   ),
                   RichText(
                     text: TextSpan(
-                      text: 'Already have account? ',
-                      style: DefaultTextStyle.of(context).style,
-                      children: <Button>[
-                        Link(
-                          text: 'Log In',
-                        )
-                      ]
+                      text: 'Already have account? Login',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                      ),
                     ),
                   ),
                 ],
