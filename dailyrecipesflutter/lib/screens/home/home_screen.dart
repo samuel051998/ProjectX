@@ -44,8 +44,8 @@ class _HomeScreenState extends State<HomeScreen> {
           backgroundColor: kBackgroundColor,
           selectedItemColor: kSecondaryColor,
           unselectedItemColor: kSecondaryColor.withOpacity(.60),
-          selectedFontSize: 14,
-          unselectedFontSize: 14,
+          selectedFontSize: 11,
+          unselectedFontSize: 11,
           currentIndex: _selectedIndex,
           onTap: _onItemTapped,
           items: [

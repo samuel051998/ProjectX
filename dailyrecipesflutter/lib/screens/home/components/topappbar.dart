@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../constants.dart';
 
+// ignore: must_be_immutable
 class TopAppBar extends StatelessWidget {
 
   Widget appBarTitle = new Text("");
