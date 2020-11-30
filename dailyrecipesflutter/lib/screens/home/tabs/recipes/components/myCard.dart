@@ -16,7 +16,7 @@ class MyCard extends StatelessWidget {
           children: <Widget>[
             SizedBox(
               width: 260.0,
-              height: 150.0,
+              height: 130.0,
               child: ClipRRect(
                 borderRadius: BorderRadius.vertical(top: Radius.circular(4.0)),
                   child: Image(

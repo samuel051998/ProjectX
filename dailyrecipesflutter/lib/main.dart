@@ -1,6 +1,7 @@
 import 'package:dailyrecipesflutter/routes.dart';
+import 'package:dailyrecipesflutter/screens/home/home_screen.dart';
+import 'package:dailyrecipesflutter/screens/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
-import 'screens/home/home_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,9 +14,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Daily Recipes App',
       //theme: theme(),
-      //home: MyHomePage(title: 'Flutter Demo Home Page'),
-      initialRoute: HomeScreen.routeName,
-      routes: routes,
+      home: SignUpScreen(),
+      initialRoute: SignUpScreen.routeName,
+      routes: {
+        '/home': (context) => HomeScreen(),
+      },
     );
   }
 }

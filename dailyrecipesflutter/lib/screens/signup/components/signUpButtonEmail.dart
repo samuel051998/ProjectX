@@ -1,3 +1,4 @@
+import 'package:dailyrecipesflutter/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
@@ -18,15 +19,21 @@ class LoginButtonEmail extends StatelessWidget {
             borderRadius: BorderRadius.circular(50.0),
           ),
           color: kPrimaryColor,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(
+              context,
+              HomeScreen.routeName,
+            );
+          },
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center, //align row content to center
             children: <Widget>[
-              IconButton(
-                icon: Icon(Icons.mail),
-                color: Colors.white,
-                alignment: Alignment.center,
-                onPressed: () {},
+              Padding(
+                padding: const EdgeInsets.only(right: 8.0),
+                child: Icon(
+                  Icons.mail,
+                  color: Colors.white,
+                ),
               ),
               Text(
                 'Sign up by Email',
