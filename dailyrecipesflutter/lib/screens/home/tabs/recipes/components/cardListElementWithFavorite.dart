@@ -1,3 +1,4 @@
+import 'package:dailyrecipesflutter/screens/home/tabs/recipes/components/favoriteWidget.dart';
 import 'package:flutter/material.dart';
 import '../../../../../constants.dart';
 
@@ -24,11 +25,7 @@ class CardListElementWithFavorite extends StatelessWidget {
             ),
           ),
           Spacer(flex: 1),
-          Icon(
-            Icons.favorite_border,
-            color: kSecondaryColor,
-            size: 18.0,
-          )
+          FavoriteWidget(),
         ],
       ),
     );

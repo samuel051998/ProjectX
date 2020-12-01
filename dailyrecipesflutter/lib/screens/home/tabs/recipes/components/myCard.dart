@@ -3,6 +3,8 @@ import 'package:dailyrecipesflutter/screens/home/tabs/recipes/components/cardLis
 import 'package:dailyrecipesflutter/screens/home/tabs/recipes/components/cardListElementWithFavorite.dart';
 import 'package:flutter/material.dart';
 
+import 'cardListElementTest.dart';
+
 class MyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -43,7 +45,7 @@ class MyCard extends StatelessWidget {
                   ),
                   CardListElement(),
                   CardListElement(),
-                  CardListElementWithFavorite(),
+                  CardListElementTest(),
                 ],
               ),
             ),

@@ -5,3 +5,5 @@ const kSecondaryColor = Color(0xFF8A949F);
 const kTextColor = Color(0xFF05172C);
 const kBackgroundColor = Color(0xFFF4F5F5);
 const kAnimationDuration = Duration(milliseconds: 200);
+const Color favoriteColor = Colors.red;
+const Color unfavoriteColor = Colors.grey;
