@@ -1,6 +1,5 @@
 import 'package:dailyrecipesflutter/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
-
 import '../../../constants.dart';
 
 class LoginButtonEmail extends StatelessWidget {

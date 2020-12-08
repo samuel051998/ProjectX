@@ -7,7 +7,8 @@ import 'tabs/profile/profile_tab.dart';
 import 'tabs/recipes/recipes_tab.dart';
 
 class HomeScreen extends StatefulWidget {
-   static String routeName = '/home';
+  static String routeName = '/home';
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }

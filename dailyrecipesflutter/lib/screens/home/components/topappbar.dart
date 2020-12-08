@@ -6,6 +6,7 @@ class TopAppBar extends StatelessWidget {
 
   Widget appBarTitle = new Text("");
   Icon actionIcon = new Icon(Icons.add);
+  Icon menuIcon = new Icon(Icons.menu);
 
   @override
   Widget build(BuildContext context) {
