@@ -18,7 +18,7 @@ class MyCard extends StatelessWidget {
         Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => DetailCard2())//DetailCard(_imagePath, _text))
+              builder: (context) => DetailCard2(_imagePath, _text))//DetailCard(_imagePath, _text))
             );
       },
     );
