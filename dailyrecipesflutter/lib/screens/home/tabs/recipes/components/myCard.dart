@@ -2,7 +2,7 @@ import 'package:dailyrecipesflutter/constants.dart';
 import 'package:dailyrecipesflutter/screens/home/tabs/recipes/components/cardListElement.dart';
 import 'package:flutter/material.dart';
 import 'cardListElementTest.dart';
-import 'detailCard2.dart';
+import 'detailCard.dart';
 
 class MyCard extends StatelessWidget {
   final String _imagePath;
@@ -16,10 +16,11 @@ class MyCard extends StatelessWidget {
       child: contentCard(),
       onTap: () {
         Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => DetailCard2(_imagePath, _text))//DetailCard(_imagePath, _text))
-            );
+          context,
+          MaterialPageRoute(
+            builder: (context) => DetailCard(_imagePath, _text)
+          )
+        );
       },
     );
   }
