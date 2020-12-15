@@ -12,14 +12,6 @@ class DetailCard extends StatelessWidget {
       appBar: AppBar(
         shadowColor: Colors.transparent,
         backgroundColor: Colors.transparent,
-        actions: <Widget>[
-          new IconButton(
-            icon: Icon(Icons.keyboard_arrow_left),
-            highlightColor: Colors.transparent,
-            onPressed: () => Navigator.pop(context, false),
-            color: Colors.white,
-          )
-        ],
       ),
       extendBodyBehindAppBar: true,
       body: Container(
