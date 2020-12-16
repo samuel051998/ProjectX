@@ -1,7 +1,7 @@
 import 'package:dailyrecipesflutter/constants.dart';
 import 'package:dailyrecipesflutter/screens/home/tabs/recipes/components/cardsListViewShort.dart';
 import 'package:dailyrecipesflutter/screens/home/tabs/recipes/components/cardsListViewShortLong.dart';
-import 'package:dailyrecipesflutter/screens/home/tabs/recipes/components/filtersListView.dart';
+import 'package:dailyrecipesflutter/screens/home/tabs/recipes/components/mealsListView.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {
@@ -50,31 +50,10 @@ class Body extends StatelessWidget {
                     ),
                   ),
                 ),
-                /*GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Filters(),
-                      )
-                    );
-                  },
-                  child: Container(
-                    width: 50.0,
-                    height: 50.0,
-                    decoration: BoxDecoration(
-                      color: Colors.orangeAccent,
-                      borderRadius: BorderRadius.all(Radius.circular(10.0))
-                    ),
-                    child: Icon(
-                      Icons.filter,
-                    ),
-                  ),
-                )*/
               ],
             ),
           ),
-          FIlterListView(),
+          MealsListView(),
           Align(
             alignment: Alignment.topLeft,
             child: Padding(

@@ -24,7 +24,7 @@ class MyCardShort extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 5.0),
       child: Container(
-        width: 180.0,
+        width: 160.0,
         child: Stack(
           alignment: Alignment.bottomCenter,
           children: <Widget>[
@@ -33,8 +33,8 @@ class MyCardShort extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.all(Radius.circular(20.0)),
                 child: Image(
-                  width: 180.0,
-                  height: 220.0,
+                  width: 160.0,
+                  height: 180.0,
                   image: AssetImage(_imagePath),
                   fit: BoxFit.cover,
                 ),
@@ -52,8 +52,8 @@ class MyCardShort extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(bottom: 10.0),
               child: Container(
-                width: 160.0,
-                height: 90.0,
+                width: 140.0,
+                height: 70.0,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.all(Radius.circular(20.0))
@@ -63,7 +63,7 @@ class MyCardShort extends StatelessWidget {
                     Text(
                       'Oats with Mango Slice and Cream',
                       style: TextStyle(
-                        fontSize: 13,
+                        fontSize: 10.0,
                         fontWeight: FontWeight.bold
                       ),
                     )

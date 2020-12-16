@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../constants.dart';
-import 'components/topappbar.dart';
 import 'tabs/explore/explore_tab.dart';
 import 'tabs/grocery/grocery_tab.dart';
 import 'tabs/profile/profile_tab.dart';
@@ -34,10 +33,6 @@ class _HomeScreenState extends State<HomeScreen> {
     return DefaultTabController(
       length: 4,
       child: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(60),
-          child: TopAppBar(),
-        ),
         body: Center(
           child: tabs.elementAt(_selectedIndex),
         ),
