@@ -9,7 +9,7 @@ class TopAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       shadowColor: Colors.transparent,
-      title: Padding(
+      /*title: Padding(
         padding: EdgeInsets.symmetric(horizontal: 8.0),
         child: Builder(
           builder: (context) => GestureDetector(
@@ -27,7 +27,8 @@ class TopAppBar extends StatelessWidget {
             ),
           )
         ),
-      ),
+      ),*/
+      
       backgroundColor: Colors.transparent,
       actions: <Widget>[
         new IconButton(
