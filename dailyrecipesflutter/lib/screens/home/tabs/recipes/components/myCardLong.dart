@@ -1,6 +1,6 @@
 import 'package:dailyrecipesflutter/constants.dart';
 import 'package:flutter/material.dart';
-import 'detailCard.dart';
+import 'detailCard2.dart';
 
 class MyCardLong extends StatelessWidget {
   final String _imagePath;
@@ -16,7 +16,7 @@ class MyCardLong extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => DetailCard(_imagePath, _text)
+            builder: (context) => DetailCard2(_imagePath, _text)
           )
         );
       },
