@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:dailyrecipesflutter/constants.dart';
 
 class DetailCard2 extends StatefulWidget {
   final String imagePath;
