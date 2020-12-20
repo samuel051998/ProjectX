@@ -13,23 +13,23 @@ class DetailCard extends StatefulWidget {
 
 class _DetailCardState extends State<DetailCard>
     with SingleTickerProviderStateMixin {
-  
   final String _imagePath;
   final String _text;
   _DetailCardState(this._imagePath, this._text);
-  
+
   AnimationController _controller;
   Animation<double> _heightFactorAnimation;
   double collapsedHeightFactor = 0.65;
   double expandedHeightFactor = 0.40;
   bool isAnimationCompleted = false;
   double screenHeight = 0;
+  Color clr = Colors.white;
 
   @override
   void initState() {
     super.initState();
     _controller = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 500));
+        vsync: this, duration: const Duration(milliseconds: 1500));
     _heightFactorAnimation =
         Tween<double>(begin: collapsedHeightFactor, end: expandedHeightFactor)
             .animate(_controller);
@@ -51,6 +51,8 @@ class _DetailCardState extends State<DetailCard>
           child: Hero(
             child: Image(
               image: AssetImage(_imagePath),
+              colorBlendMode: BlendMode.modulate,
+              color: clr,
               fit: BoxFit.cover,
             ),
             tag: _text,
@@ -66,6 +68,17 @@ class _DetailCardState extends State<DetailCard>
             child: Container(
               decoration: BoxDecoration(
                 color: Color(0xFFEEEEEE),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black,
+                    blurRadius: 55.0,
+                    spreadRadius: 1.0,
+                    offset: Offset(
+                      0,
+                      20.0,
+                    )              
+                  ),
+                ],
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(40.0),
                     topRight: Radius.circular(40.0)),
@@ -85,8 +98,10 @@ class _DetailCardState extends State<DetailCard>
   _handleVerticalEnd(DragEndDetails endDetails) {
     if (_controller.value >= 0.5) {
       _controller.fling(velocity: 1);
+      clr = Color(0xFFD3D3D3);
     } else {
       _controller.fling(velocity: -1);
+      clr = Colors.white;
     }
   }
 
