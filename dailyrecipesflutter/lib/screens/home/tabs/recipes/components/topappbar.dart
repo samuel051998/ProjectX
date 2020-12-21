@@ -9,26 +9,6 @@ class TopAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       shadowColor: Colors.transparent,
-      /*title: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 8.0),
-        child: Builder(
-          builder: (context) => GestureDetector(
-            onTap: () => Scaffold.of(context).openDrawer(),
-            child: Container(
-              width: 35.0,
-              height: 35.0,
-              decoration: BoxDecoration(
-                color: Colors.grey,
-                borderRadius: BorderRadius.all(Radius.circular(10.0)),
-              ),
-              child: Icon(
-                Icons.menu,
-              ),
-            ),
-          )
-        ),
-      ),*/
-      
       backgroundColor: Colors.transparent,
       actions: <Widget>[
         new IconButton(
