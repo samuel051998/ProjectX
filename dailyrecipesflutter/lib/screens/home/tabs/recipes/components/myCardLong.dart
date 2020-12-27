@@ -17,8 +17,8 @@ class MyCardLong extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => DetailCard(_imagePath, _text)//DetailCard2(_imagePath, _text)
-          )
+            builder: (context) => DetailCard(_imagePath, _text),
+          ),
         );
       },
     );
@@ -54,44 +54,46 @@ class MyCardLong extends StatelessWidget {
               ),
               tag: _text,
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
-                  child: Text(
-                    'In Breakfast',
-                    style: TextStyle(
-                      color: kSecondaryColor,
-                      fontSize: 8.0,
-                      fontWeight: FontWeight.normal,
+            Flexible(
+                          child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
+                    child: Text(
+                      'In Breakfast',
+                      style: TextStyle(
+                        color: kSecondaryColor,
+                        fontSize: 8.0,
+                        fontWeight: FontWeight.normal,
+                      ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 4.0),
-                  child: Text(
-                    'Morning shake with\nmango slice and cream',
-                    style: TextStyle(
-                      color: kTextColor,
-                      fontSize: 11.0,
-                      fontWeight: FontWeight.bold,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 4.0),
+                    child: Text(
+                      _text,
+                      style: TextStyle(
+                        color: kTextColor,
+                        fontSize: 11.0,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 4.0),
-                  child: Text(
-                    'No added sugar for this shake,\nhelp to mantain body energy',
-                    style: TextStyle(
-                      color: kSecondaryColor,
-                      fontSize: 8.5,
-                      fontWeight: FontWeight.normal,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 4.0),
+                    child: Text(
+                      'No added sugar for this shake, help to mantain body energy',
+                      style: TextStyle(
+                        color: kSecondaryColor,
+                        fontSize: 8.5,
+                        fontWeight: FontWeight.normal,
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             )
           ],
         ),

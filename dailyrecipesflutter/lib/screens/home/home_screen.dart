@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../../constants.dart';
 import 'tabs/explore/explore_tab.dart';
 import 'tabs/grocery/grocery_tab.dart';
-import 'tabs/profile/profile_tab.dart';
 import 'tabs/recipes/recipes_tab.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -19,7 +18,6 @@ class _HomeScreenState extends State<HomeScreen> {
     RecipesTab(),
     ExploreTab(),
     GroceryTab(),
-    ProfileTab(),
   ];
 
   void _onItemTapped(int index) {
@@ -31,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4,
+      length: 3,
       child: Scaffold(
         body: Center(
           child: tabs.elementAt(_selectedIndex),
@@ -58,10 +56,6 @@ class _HomeScreenState extends State<HomeScreen> {
               label: 'Grocery',
               icon: Icon(Icons.menu_book),
             ),
-            BottomNavigationBarItem(
-              label: 'Profile',
-              icon: Icon(Icons.person),
-            )
           ],
         ),
       ),

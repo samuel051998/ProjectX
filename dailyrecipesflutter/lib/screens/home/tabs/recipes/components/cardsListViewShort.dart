@@ -5,7 +5,7 @@ class CardsListViewShort extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200.0,
+      height: 220.0,
       child: ListView(
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.all(11.0),

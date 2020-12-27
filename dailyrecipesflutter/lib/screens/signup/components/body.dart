@@ -8,11 +8,11 @@ class Body extends StatelessWidget {
     return Stack(
       children: <Widget>[
         ImageFullScreenWidget(),
-        Expanded(
-          child: Align(
-            alignment: Alignment.bottomCenter,
-            child: Padding(
-              padding: const EdgeInsets.all(32.0),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Padding(
+            padding: const EdgeInsets.all(32.0),
+            child: Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [

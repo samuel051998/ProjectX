@@ -1,5 +1,5 @@
+import 'package:dailyrecipesflutter/screens/profile/profile_tab.dart';
 import 'package:flutter/material.dart';
-import '../../../../../constants.dart';
 
 // ignore: must_be_immutable
 class TopAppBar extends StatelessWidget {
@@ -11,12 +11,19 @@ class TopAppBar extends StatelessWidget {
       shadowColor: Colors.transparent,
       backgroundColor: Colors.transparent,
       actions: <Widget>[
-        new IconButton(
-          splashColor: Colors.transparent,
-          icon: actionIcon,
-          highlightColor: Colors.transparent,
-          onPressed: () {},
-          color: kPrimaryColor,
+        Padding(
+          padding: EdgeInsets.only(right: 10.0),
+          child: GestureDetector(
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ProfileTab(),
+              ),
+            ),
+            child: CircleAvatar(
+              backgroundImage: AssetImage('assets/images/profile/profile1.jpg'),
+            ),
+          ),
         )
       ],
       iconTheme: IconThemeData(color: Colors.black),

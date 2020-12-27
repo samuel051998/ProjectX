@@ -1,6 +1,6 @@
 import 'package:dailyrecipesflutter/constants.dart';
 import 'package:dailyrecipesflutter/screens/home/tabs/recipes/components/cardsListViewShort.dart';
-import 'package:dailyrecipesflutter/screens/home/tabs/recipes/components/cardsListViewShortLong.dart';
+import 'package:dailyrecipesflutter/screens/home/tabs/recipes/components/cardsListViewLong.dart';
 import 'package:dailyrecipesflutter/screens/home/tabs/recipes/components/mealsListView.dart';
 import 'package:flutter/material.dart';
 
@@ -25,11 +25,11 @@ class Body extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: RichText(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
+            child: Expanded(
+              child: Row(
+                children: <Widget>[
+                  RichText(
                     text: TextSpan(
                       text: 'Make your own food,\nstay at ',
                       style: TextStyle(
@@ -49,15 +49,15 @@ class Body extends StatelessWidget {
                       ],
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
           MealsListView(),
           Align(
             alignment: Alignment.topLeft,
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
               child: Text(
                 "Popular Recipes",
                 style: TextStyle(
@@ -72,7 +72,7 @@ class Body extends StatelessWidget {
           Align(
             alignment: Alignment.topLeft,
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
               child: Text(
                 'Most Viewed Recipes',
                 style: TextStyle(

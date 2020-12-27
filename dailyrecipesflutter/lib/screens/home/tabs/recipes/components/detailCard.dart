@@ -1,4 +1,5 @@
 import 'package:dailyrecipesflutter/constants.dart';
+import 'package:dailyrecipesflutter/screens/home/tabs/recipes/components/contentDetailCard.dart';
 import 'package:flutter/material.dart';
 
 class DetailCard extends StatefulWidget {
@@ -74,68 +75,16 @@ class _DetailCardState extends State<DetailCard>
                     offset: Offset(
                       0,
                       20.0,
-                    )              
+                    )
                   ),
                 ],
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(40.0),
                   topRight: Radius.circular(40.0)),
               ),
-              child: Column(
-                children: <Widget>[
-                  Padding(
-                    padding: EdgeInsets.all(16.0),
-                    child: ListTile(
-                      title: Text(
-                        'Oats with Mango Slice\nand Cream',
-                        style: TextStyle(
-                          color: kTextColor,
-                          fontSize: 17.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      subtitle: Text(
-                        'In Breakfast',
-                        style: TextStyle(
-                          color: kSecondaryColor,
-                          fontSize: 13.0,
-                          fontWeight: FontWeight.normal,
-                        ),
-                      ),
-                      trailing: Container(
-                        width: 60.0,
-                        height: 35.0,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                          color: Color(0xFFF6BD0F),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.star,
-                              color: kTextColor,
-                              size: 18.0,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 3.0),
-                              child: Text(
-                                '4.9',
-                                style: TextStyle(
-                                  color: kTextColor,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12.0,
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      dense: true,
-                    ),
-                  ),
-                ],
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: ContentDetailCard(_text),
               ),
             ),
           ),
@@ -167,6 +116,20 @@ class _DetailCardState extends State<DetailCard>
       appBar: AppBar(
         shadowColor: Colors.transparent,
         backgroundColor: Colors.transparent,
+        leading: new Container(),
+        actions: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(right: 15.0),
+            child: IconButton(
+              icon: Icon(
+                Icons.cancel,
+                color: Colors.white.withOpacity(0.5),
+                size: 35.0,
+              ),
+              onPressed: () => Navigator.of(context).pop(),
+            ),
+          ),
+        ],
       ),
       extendBodyBehindAppBar: true,
       body: AnimatedBuilder(
