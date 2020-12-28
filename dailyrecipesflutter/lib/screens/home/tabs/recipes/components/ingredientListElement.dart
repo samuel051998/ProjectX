@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 
 class IngredientListElement extends StatelessWidget {
   final String _imagePath;
-  final String _text;
+  final String _name;
+  final String _quantity;
 
-  IngredientListElement(this._imagePath, this._text);
+  IngredientListElement(this._imagePath, this._name, this._quantity);
 
   @override
   Widget build(BuildContext context) {
@@ -24,13 +25,25 @@ class IngredientListElement extends StatelessWidget {
               fit: BoxFit.fitWidth,
             ),
             Text(
-              _text,
+              _name,
               style: TextStyle(
                 fontSize: 12.0,
-                fontWeight: FontWeight.normal,
+                fontWeight: FontWeight.w400,
                 color: kTextColor,
               ),
-            )
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 5.0),
+              child: Text(
+                _quantity,
+                style: TextStyle(
+                  letterSpacing: 1.0,
+                  fontSize: 10.0,
+                  fontWeight: FontWeight.w300,
+                  color: kTextColor,
+                ),
+              ),
+            ),
           ],
         ),
       ),
