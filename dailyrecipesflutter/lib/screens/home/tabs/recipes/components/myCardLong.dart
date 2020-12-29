@@ -55,8 +55,9 @@ class MyCardLong extends StatelessWidget {
               tag: _text,
             ),
             Flexible(
-                          child: Column(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Padding(
@@ -70,8 +71,8 @@ class MyCardLong extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 4.0),
+                  Expanded(
+                    flex: 1,
                     child: Text(
                       _text,
                       style: TextStyle(
@@ -81,8 +82,8 @@ class MyCardLong extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 4.0),
+                  Expanded(
+                    flex: 3,
                     child: Text(
                       'No added sugar for this shake, help to mantain body energy',
                       style: TextStyle(
@@ -90,6 +91,81 @@ class MyCardLong extends StatelessWidget {
                         fontSize: 8.5,
                         fontWeight: FontWeight.normal,
                       ),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Container(
+                          child: Column(
+                            children: <Widget>[
+                              Icon(
+                                Icons.access_time,
+                                color: kTextColor,
+                                size: 14.0,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 2.0),
+                                child: Text(
+                                  '10 min.',
+                                  style: TextStyle(
+                                    fontSize: 7.0,
+                                    color: kTextColor,
+                                    fontWeight: FontWeight.w300,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          child: Column(
+                            children: <Widget>[
+                              Icon(
+                                Icons.local_fire_department_outlined,
+                                color: kTextColor,
+                                size: 14.0,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 2.0),
+                                child: Text(
+                                  '10 min.',
+                                  style: TextStyle(
+                                    fontSize: 7.0,
+                                    color: kTextColor,
+                                    fontWeight: FontWeight.w300,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          child: Column(
+                            children: <Widget>[
+                              Icon(
+                                Icons.star_border,
+                                color: kTextColor,
+                                size: 14.0,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 2.0),
+                                child: Text(
+                                  '4.9',
+                                  style: TextStyle(
+                                    fontSize: 7.0,
+                                    color: kTextColor,
+                                    fontWeight: FontWeight.w300,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
