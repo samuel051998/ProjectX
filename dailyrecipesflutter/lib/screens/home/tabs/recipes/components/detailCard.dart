@@ -1,6 +1,7 @@
 import 'package:dailyrecipesflutter/constants.dart';
 import 'package:dailyrecipesflutter/screens/home/tabs/recipes/components/contentDetailCard.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class DetailCard extends StatefulWidget {
   final String imagePath;
@@ -66,7 +67,7 @@ class _DetailCardState extends State<DetailCard>
             heightFactor: 1.05 - _heightFactorAnimation.value,
             child: Container(
               decoration: BoxDecoration(
-                color: Color(0xFFEEEEEE),
+                color: kBackgroundColor,
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black,
@@ -83,7 +84,7 @@ class _DetailCardState extends State<DetailCard>
                   topRight: Radius.circular(40.0)),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 25.0),
                 child: ContentDetailCard(_text),
               ),
             ),
