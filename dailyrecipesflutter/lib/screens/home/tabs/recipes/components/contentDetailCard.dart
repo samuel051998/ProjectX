@@ -45,6 +45,7 @@ class _ContentDetailCardState extends State<ContentDetailCard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kBackgroundColor,
       body: NotificationListener<OverscrollIndicatorNotification>(
         onNotification: (overScroll) {
           overScroll.disallowGlow();
@@ -134,25 +135,68 @@ class _ContentDetailCardState extends State<ContentDetailCard> {
                   ),
                   /* ############### INGREDIENTS ############### */
                   Padding(
-                    padding: const EdgeInsets.only(left: 16.0),
-                    child: Align(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        'Ingredients',
-                        style: TextStyle(
-                          color: kTextColor,
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.bold,
+                    padding: const EdgeInsets.all(16.0),
+                    child: DefaultTabController(
+                      length: 3, 
+                      child: TabBar(
+                        unselectedLabelColor: Colors.black,
+                        indicator: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          color: Colors.black,
                         ),
+                        tabs: [
+                          Tab(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                              ),
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  'Ingredients',
+                                  style: TextStyle(
+                                    fontSize: 13.0
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Tab(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                              ),
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  'Tools',
+                                  style: TextStyle(
+                                    fontSize: 13.0
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Tab(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                              ),
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  'Steps',
+                                  style: TextStyle(
+                                    fontSize: 13.0
+                                  ),  
+                                ),
+                              ),
+                            ),
+                          )
+                        ],
                       ),
                     ),
                   ),
-                  IngredientsListView(),
-                  IngredientsListView(),
-                  IngredientsListView(),
-                  IngredientsListView(),
-                  IngredientsListView(),
-                  IngredientsListView(),
                 ],
               ),
             ),
