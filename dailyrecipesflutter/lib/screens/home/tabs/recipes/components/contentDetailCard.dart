@@ -9,31 +9,35 @@ class ContentDetailCard extends StatefulWidget {
   final String text;
   ContentDetailCard(this.text);
 
-   @override
+  @override
   _ContentDetailCardState createState() => _ContentDetailCardState(text);
 }
 
-class _ContentDetailCardState extends State<ContentDetailCard> {
+class _ContentDetailCardState extends State<ContentDetailCard> with TickerProviderStateMixin {
   final String _text;
   _ContentDetailCardState(this._text);
 
   ScrollController _hideButtonController;
   bool _isVisible;
+  TabController _controller;
 
   @override
   void initState() {
     super.initState();
+     _controller = new TabController(initialIndex: 0, length: 3, vsync: this);
     _isVisible = false;
     _hideButtonController = new ScrollController();
-    _hideButtonController.addListener(() { 
-      if(_hideButtonController.position.userScrollDirection == ScrollDirection.reverse) {
-        if(_isVisible == false) {
+    _hideButtonController.addListener(() {
+      if (_hideButtonController.position.userScrollDirection ==
+          ScrollDirection.reverse) {
+        if (_isVisible == false) {
           setState(() {
             _isVisible = true;
           });
         }
-      } else if(_hideButtonController.position.userScrollDirection == ScrollDirection.forward) {
-        if(_isVisible == true) {
+      } else if (_hideButtonController.position.userScrollDirection ==
+          ScrollDirection.forward) {
+        if (_isVisible == true) {
           setState(() {
             _isVisible = false;
           });
@@ -84,7 +88,8 @@ class _ContentDetailCardState extends State<ContentDetailCard> {
                     padding: const EdgeInsets.symmetric(vertical: 10.0),
                     child: ListTile(
                       leading: CircleAvatar(
-                        backgroundImage: AssetImage('assets/images/profile/profile1.jpg'),
+                        backgroundImage:
+                            AssetImage('assets/images/profile/profile1.jpg'),
                       ),
                       title: Text(
                         'Samuele Giaccone',
@@ -135,68 +140,82 @@ class _ContentDetailCardState extends State<ContentDetailCard> {
                   ),
                   /* ############### INGREDIENTS ############### */
                   Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: DefaultTabController(
-                      length: 3, 
-                      child: TabBar(
-                        unselectedLabelColor: Colors.black,
-                        indicator: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
-                          color: Colors.black,
+                    padding: const EdgeInsets.all(8.0),
+                    child: Material(
+                      color: Color(0xFFDCDCDC),
+                      borderRadius: BorderRadius.circular(50),
+                      child: SizedBox(
+                        height: 32.0,
+                        child: new TabBar(
+                          controller: _controller,
+                          unselectedLabelColor: Colors.black,
+                          indicator: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            color: Colors.black
+                          ),
+                          indicatorSize: TabBarIndicatorSize.tab,
+                          tabs: [
+                            Tab(
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50),
+                                ),
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    'Ingredients',
+                                    style: TextStyle(fontSize: 12.0),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Tab(
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50),
+                                ),
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    'Tools',
+                                    style: TextStyle(fontSize: 12.0),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Tab(
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50),
+                                ),
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    'Steps',
+                                    style: TextStyle(fontSize: 12.0),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                        tabs: [
-                          Tab(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                              ),
-                              child: Align(
-                                alignment: Alignment.center,
-                                child: Text(
-                                  'Ingredients',
-                                  style: TextStyle(
-                                    fontSize: 13.0
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Tab(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                              ),
-                              child: Align(
-                                alignment: Alignment.center,
-                                child: Text(
-                                  'Tools',
-                                  style: TextStyle(
-                                    fontSize: 13.0
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Tab(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                              ),
-                              child: Align(
-                                alignment: Alignment.center,
-                                child: Text(
-                                  'Steps',
-                                  style: TextStyle(
-                                    fontSize: 13.0
-                                  ),  
-                                ),
-                              ),
-                            ),
-                          )
-                        ],
                       ),
                     ),
                   ),
+                  Container(
+                    height: 200.0,
+                    child: TabBarView(
+                      controller: _controller,
+                      children: <Widget>[
+                        Align(
+                          alignment: Alignment.topCenter,
+                          child: IngredientsListView()
+                        ),
+                        IngredientsListView(),
+                        IngredientsListView(),
+                      ],
+                    ),
+                  )
                 ],
               ),
             ),
